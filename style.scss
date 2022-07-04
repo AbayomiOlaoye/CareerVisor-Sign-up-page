@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Body rules here */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 2.5rem;
+  width: 100%;
+}
+
+/* Header declarations */
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #000;
+
+  .logo-container {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+
+    a {
+      display: block;
+      padding: 1rem 1rem;
+    }
+
+    .open {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+/* Container section for other part of the content (main) sections*/
+.container {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 60px 0;
+  margin: 0 auto;
+
+  .content-div {
+    h1{
+      max-width: 300px;
+      margin: 24px auto 24px auto;
+    }
+
+  }
+
+  .sign-up {
+    label,
+    input,
+    button {
+      display: block;
+    }
+
+    form {
+      position: relative;
+      text-align: left;
+      margin: 24px auto 24px auto;
+      background-color: antiquewhite;
+      width: 80%;
+      padding: 3rem 2rem;
+      border-radius: 30% 10% / 10% 10%;
+      box-shadow: 1px 1px 10px 2px #000;
+    }
+  }
+}
+
+/*Separate styling for form here:
+- accent color
+- focus
+- valid
+- invalid
+*/
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  font-size: 1.15rem;
+  width: 100%;
+  padding: 0.25rem;
+  accent-color: #081d45;
+}
+
+label {
+  color: #ce1f69;
+  width:fit-content;
+  margin: .0;
+  padding: 0;
+  font-weight: 700;
+
+  &[for='agree'] {
+    color: #000;
+    font-size: 0.5rem;
+    position: absolute;
+    top: 76%;
+    left: 18%
+  }
+}
+
+input[type="checkbox"] {
+  margin-top: .5rem;
+}
+
+button {
+  width: 150px;
+  padding: 8px 0;
+  background-color: #081d45;
+  color: aliceblue;
+  opacity: 0.7;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  transform: scale(1.05);
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+button[type='submit'] {
+  margin-top: 10px;
+}
