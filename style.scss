@@ -1,0 +1,250 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Body rules here */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 2rem;
+  width: 100%;
+}
+
+/* Header declarations */
+header {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background-color: #000;
+
+  .logo-container {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+
+    a {
+      display: block;
+      padding: 1rem 1rem;
+    }
+
+    .open {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  nav {
+    display: none;
+    text-transform: capitalize;
+    background-color: rgba(0, 0, 0, 0.87);
+    backdrop-filter: blur(5px);
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    transform: scale(1.05);
+    transition: all 0.9s ease-out;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #ce1f69;
+      padding: 16px;
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+      transform-origin: bottom;
+      transform: translate(-45deg, 50px 5px);
+
+      &:hover {
+        color: aliceblue;
+        border-bottom: 2px solid #ce1f69;
+      }
+    }
+
+    .exit {
+      margin-left: 24px;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      transition: all 0.5s;
+      transform-origin: bottom;
+
+      &:hover {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+
+/* Container section for other part of the content (main) sections*/
+.container {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  margin: 0 auto;
+
+  .content-div {
+    h1{
+      max-width: 300px;
+      margin: 24px auto 24px auto;
+    }
+  }
+
+  .sign-up {
+    label,
+    input,
+    button {
+      display: block;
+    }
+
+    form {
+      position: relative;
+      text-align: left;
+      margin: 24px auto 24px auto;
+      background-color: antiquewhite;
+      width: 80%;
+      padding: 3rem 2rem;
+      border-radius: 30% 10% / 10% 10%;
+      box-shadow: 1px 1px 10px 2px #000;
+
+      .fname {
+        display: none;
+      }
+    }
+  }
+}
+
+/*Separate styling for form here:
+- accent color
+- focus
+- valid
+- invalid
+*/
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  font-size: 1.15rem;
+  width: 100%;
+  padding: 0.25rem;
+
+  &:invalid {
+    border: red;
+  }
+}
+
+label {
+  color: #ce1f69;
+  width:fit-content;
+  margin: .0;
+  padding: 0;
+  font-weight: 700;
+
+  &[for='agree'] {
+    color: #000;
+    font-size: 0.5rem;
+    position: absolute;
+    top: 76%;
+    left: 18%
+  }
+}
+
+input[type="checkbox"] {
+  margin-top: .5rem;
+  accent-color: #ce1f69;
+}
+
+button {
+  max-width: 150px;
+  height: auto;
+  padding: 8px 16px;
+  background-color: #081d45;
+  color: aliceblue;
+  opacity: 0.7;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  transform: scale(1.05);
+  transition: all 250ms ease-in-out;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+button[type='submit'] {
+  margin-top: 10px;
+}
+
+footer.copyright {
+  background-color: rgb(10, 10, 10);
+  color: aliceblue;
+  width: 100%;
+  line-height: 1.8rem;
+  small {
+    max-width: 300px;
+    
+  }
+
+  a {
+    color: #ce1f69;
+    text-decoration: none;
+  }
+}
+
+/* Media Queries @ 768px mini*/
+@media screen and (min-width: 768px) {
+  .open,
+  .exit {
+    display: none;
+  }
+  
+  nav {
+    display: flex;
+
+    a {
+      color: #000;
+    }
+  }
+
+  form {
+    //max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+    width: 50%;
+    box-shadow: none;
+    border-radius: 0;
+
+    .ignore {
+      display: none;
+    }
+
+    .fname {
+      display: block;
+    }
+
+    input[type="checkbox"] {
+      margin-top: .5rem;
+      accent-color: #ce1f69;
+      max-width: 16px;
+      max-height: 16px;
+    }
+
+    label[for='agree'] {
+      color: #000;
+      font-size: 0.5rem;
+      position: absolute;
+      top: 70%;
+      left: 5%
+    }
+  }
+}
