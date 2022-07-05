@@ -31,8 +31,12 @@
     </div>
     <div class="sign-up">
       <form action="https://formspree.io/f/mrgjwgjq" method="post" class="sign-up-info">
-        <label for="fullname">Name</label>
-        <input type="text" name="fullname" id="fullname" placeholder="Full name" required>
+        <label class="fname" for="fname">First name</label>
+        <input class="fname" type="text" name="fname" id="fname" placeholder="First name" required>
+        <label for="lname">Last name</label>
+        <input type="text" name="lname" id="lname" placeholder="Last name" required>
+        <label class='ignore' for="fullname">Name</label>
+        <input class='ignore' type="text" name="fullname" id="fullname" placeholder="Full name" required>
         <label for="email">Email</label>
         <input type="email" name="email" placeholder="member@example.com" id="email" required>
         <label for="p/number">Phone number</label>
@@ -45,11 +49,14 @@
         <label for="agree"> I agree to be part of the growing CareerVisor Family</label>
         <button type="submit">I'm in</button>
       </form>
+      <p>Already have an account? <a href="#">Log in</a></p>
       <footer class="copyright">
-        <a href="https://github.com/MindPrepDev/CareerVisor-Sign-up-page">&copy; Olaoye Oluwatoyin 2022</a>
-        <small>Check up the source code and README file for Photo Credits <a href="http://https://github.com/MindPrepDev/CareerVisor-Sign-up-page">here</a></small>
+        <small><a href="https://github.com/MindPrepDev/CareerVisor-Sign-up-page">&copy; Olaoye Oluwatoyin 2022</a><br>
+        Check up the source code and README file for Photo Credits <a href="http://https://github.com/MindPrepDev/CareerVisor-Sign-up-page">here</a></small>
       </footer>
     </div>
   </div>
+
+  <script src="main.js"></script>
 </body>
 </html>

@@ -7,12 +7,13 @@
 /* Body rules here */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  line-height: 2.5rem;
+  line-height: 2rem;
   width: 100%;
 }
 
 /* Header declarations */
 header {
+  position: relative;
   width: 100%;
   height: 70px;
   background-color: #000;
@@ -35,6 +36,44 @@ header .logo-container .open {
 }
 header nav {
   display: none;
+  text-transform: capitalize;
+  background-color: rgba(0, 0, 0, 0.87);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  transform: scale(1.05);
+  transition: all 0.9s ease-out;
+}
+header nav a {
+  display: block;
+  text-decoration: none;
+  color: #ce1f69;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  transform-origin: bottom;
+  transform: translate(-45deg, 50px 5px);
+}
+header nav a:hover {
+  color: aliceblue;
+  border-bottom: 2px solid #ce1f69;
+}
+header nav .exit {
+  margin-left: 24px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.5s;
+  transform-origin: bottom;
+}
+header nav .exit:hover {
+  width: 28px;
+  height: 28px;
 }
 
 /* Container section for other part of the content (main) sections*/
@@ -42,7 +81,7 @@ header nav {
   text-align: center;
   width: 100%;
   height: auto;
-  padding: 60px 0;
+  padding-top: 60px;
   margin: 0 auto;
 }
 .container .content-div h1 {
@@ -64,6 +103,9 @@ header nav {
   border-radius: 30% 10%/10% 10%;
   box-shadow: 1px 1px 10px 2px #000;
 }
+.container .sign-up form .fname {
+  display: none;
+}
 
 /*Separate styling for form here:
 - accent color
@@ -78,7 +120,12 @@ input[type=number] {
   font-size: 1.15rem;
   width: 100%;
   padding: 0.25rem;
-  accent-color: #081d45;
+}
+input[type=text]:invalid,
+input[type=email]:invalid,
+input[type=password]:invalid,
+input[type=number]:invalid {
+  border: red;
 }
 
 label {
@@ -100,11 +147,13 @@ label[for=agree] {
 
 input[type=checkbox] {
   margin-top: 0.5rem;
+  accent-color: #ce1f69;
 }
 
 button {
-  width: 150px;
-  padding: 8px 0;
+  max-width: 150px;
+  height: auto;
+  padding: 8px 16px;
   background-color: #081d45;
   color: aliceblue;
   opacity: 0.7;
@@ -112,6 +161,8 @@ button {
   font-size: 1.25rem;
   transform: scale(1.05);
   transition: all 250ms ease-in-out;
+  border: none;
+  cursor: pointer;
 }
 button:hover {
   opacity: 1;
@@ -119,4 +170,61 @@ button:hover {
 
 button[type=submit] {
   margin-top: 10px;
+}
+
+footer.copyright {
+  background-color: rgb(10, 10, 10);
+  color: aliceblue;
+  width: 100%;
+  line-height: 1.8rem;
+}
+footer.copyright small {
+  max-width: 300px;
+}
+footer.copyright a {
+  color: #ce1f69;
+  text-decoration: none;
+}
+
+/* Media Queries @ 768px mini*/
+@media screen and (min-width: 768px) {
+  .open,
+.exit {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+  }
+  nav a {
+    color: #000;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+    width: 50%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  form .ignore {
+    display: none;
+  }
+  form .fname {
+    display: block;
+  }
+  form input[type=checkbox] {
+    margin-top: 0.5rem;
+    accent-color: #ce1f69;
+    max-width: 16px;
+    max-height: 16px;
+  }
+  form label[for=agree] {
+    color: #000;
+    font-size: 0.5rem;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+  }
 }/*# sourceMappingURL=style.css.map */
